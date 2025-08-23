@@ -1,0 +1,74 @@
+# Model parameters for Home Credit Default Risk ML project
+
+# Data processing parameters
+data_processing:
+  test_size: 0.2
+  validation_size: 0.2
+  random_state: 42
+  missing_threshold: 0.5
+  correlation_threshold: 0.95
+
+# Feature engineering parameters
+feature_engineering:
+  numerical_features_agg: ['mean', 'std', 'min', 'max', 'sum', 'count']
+  categorical_features_encoding: 'target'
+  polynomial_degree: 2
+  interaction_only: false
+
+# Logistic Regression parameters
+logistic_regression:
+  C: 1.0
+  penalty: 'l2'
+  solver: 'liblinear'
+  max_iter: 1000
+  random_state: 42
+
+# Random Forest parameters
+random_forest:
+  n_estimators: 200
+  max_depth: 10
+  min_samples_split: 5
+  min_samples_leaf: 2
+  max_features: 'sqrt'
+  random_state: 42
+  n_jobs: -1
+
+# XGBoost parameters
+xgboost:
+  n_estimators: 200
+  max_depth: 6
+  learning_rate: 0.1
+  subsample: 0.8
+  colsample_bytree: 0.8
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  random_state: 42
+  eval_metric: 'auc'
+
+# LightGBM parameters
+lightgbm:
+  n_estimators: 200
+  max_depth: 6
+  learning_rate: 0.1
+  num_leaves: 31
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  bagging_freq: 5
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  random_state: 42
+  metric: 'auc'
+  objective: 'binary'
+
+# Model evaluation parameters
+evaluation:
+  cv_folds: 5
+  scoring_metrics: ['roc_auc', 'precision', 'recall', 'f1']
+  threshold_optimization: true
+  
+# Model names for evaluation
+model_names:
+  logistic_regression: "Logistic Regression"
+  random_forest: "Random Forest"
+  xgboost: "XGBoost"
+  lightgbm: "LightGBM"

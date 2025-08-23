@@ -1,0 +1,146 @@
+# Data Catalog for Home Credit Default Risk ML project
+
+# Raw datasets
+application_train:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/application_train.csv
+
+application_test:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/application_test.csv
+
+bureau:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/bureau.csv
+
+bureau_balance:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/bureau_balance.csv
+
+credit_card_balance:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/credit_card_balance.csv
+
+installments_payments:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/installments_payments.csv
+
+pos_cash_balance:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/POS_CASH_balance.csv
+
+previous_application:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/previous_application.csv
+
+sample_submission:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/sample_submission.csv
+
+columns_description:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/HomeCredit_columns_description.csv
+
+# Intermediate processed data
+application_train_processed:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/application_train_processed.csv
+
+application_test_processed:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/application_test_processed.csv
+
+bureau_aggregated:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/bureau_aggregated.csv
+
+previous_loans_aggregated:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/previous_loans_aggregated.csv
+
+# Primary datasets (after feature engineering)
+features_train:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/features_train.csv
+
+features_test:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/features_test.csv
+
+# Feature engineering outputs
+engineered_features:
+  type: pandas.CSVDataset
+  filepath: data/04_feature/engineered_features.csv
+
+# Model input datasets
+train_features:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/train_features.csv
+
+train_targets:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/train_targets.csv
+
+test_features:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/test_features.csv
+
+validation_features:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/validation_features.csv
+
+validation_targets:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/validation_targets.csv
+
+# Feature encoders and preprocessors
+feature_preprocessor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/feature_preprocessor.pkl
+
+target_encoder:
+  type: pickle.PickleDataset
+  filepath: data/06_models/target_encoder.pkl
+
+# Trained models
+logistic_regression_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/logistic_regression_model.pkl
+
+random_forest_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/random_forest_model.pkl
+
+xgboost_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/xgboost_model.pkl
+
+lightgbm_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/lightgbm_model.pkl
+
+# Model outputs
+model_predictions:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/predictions.csv
+
+submission_file:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/submission.csv
+
+# Model metrics and reports
+model_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/model_metrics.json
+
+feature_importance:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/feature_importance.csv
+
+model_comparison:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/model_comparison.csv
+
+roc_curves_data:
+  type: json.JSONDataset
+  filepath: data/08_reporting/roc_curves_data.json
