@@ -140,8 +140,8 @@ conf/local/**
 .telemetry
 
 # Data (except raw data which should be versioned)
-data/**
-!data/**/
+*.csv
+*.zip
 
 # Logs
 logs/**
