@@ -7,7 +7,7 @@ Este proyecto de aprendizaje automático utiliza la metodología CRISP-DM para a
 ## Autores
 
 - Luis Salamanca
-- Brahian Gonzales
+- Braihan Gonzales
 
 ## Fuente de Datos
 
